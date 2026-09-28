@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Landing page magazine Pantai Dermaga Tuban — Where White Sand Meets the Blue Sea." />
+  <title>Pantai Dermaga — Where White Sand Meets the Blue Sea</title>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Nunito:wght@400;500;600;700;800&family=Pangolin&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --sea-mist:#DFF3F5;
+      --shell:#F6F1E9;
+      --sand:#E8D8C3;
+      --powder:#B0E0E6;
+      --breeze:#7EC8E3;
+      --coastal:#4BA3C7;
+      --pebble:#A89F91;
+      --storm:#2F4858;
+      --navy:#1B3B4D;
+      --white:#fff;
+      --ink:#17313d;
+      --line:rgba(27,59,77,.14);
+      --shadow:0 18px 45px rgba(27,59,77,.12);
+      --radius:28px;
+      --radius-sm:18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--shell);
+      font-family:"Nunito",sans-serif;
+      overflow-x:hidden;
+    }
+    img{display:block;max-width:100%;image-rendering:auto;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+
+    /* ===== NAV ===== */
+    .nav{
+      position:fixed;
+      z-index:50;
+      top:16px;
+      left:50%;
+      transform:translateX(-50%);
+      width:min(1180px,calc(100% - 32px));
+      padding:10px 12px 10px 20px;
+      border:1px solid rgba(255,255,255,.65);
+      background:rgba(246,241,233,.78);
+      backdrop-filter:blur(16px);
+      border-radius:999px;
+      box-shadow:0 10px 30px rgba(27,59,77,.08);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-family:"Pangolin",cursive;
+      font-size:24px;
+      color:var(--navy);
+      white-space:nowrap;
+    }
+    .brand-mark{
+      width:34px;height:34px;
+      border-radius:50%;
+      background:var(--navy);
+      color:white;
+      display:grid;
+      place-items:center;
+      font-family:"Balsamiq Sans",sans-serif;
+      font-size:14px;
+      letter-spacing:-1px;
+    }
+    .nav-links{display:flex;align-items:center;gap:5px}
+    .nav-links a{
+      padding:10px 13px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      transition:.2s;
+    }
+    .nav-links a:hover{background:var(--sea-mist)}
+    .nav-cta{
+      background:var(--navy)!important;
+      color:#fff;
+      padding:11px 18px!important;
+    }
+    .menu-btn{
+      display:none;
+      border:0;background:var(--navy);color:white;
+      width:42px;height:42px;border-radius:50%;
+      cursor:pointer;
+    }
+
+    /* ===== GLOBAL ===== */
+    .wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--coastal);
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:11px;
+      font-weight:900;
+    }
+    .eyebrow::before{
+      content:"";
+      width:24px;height:2px;
+      background:currentColor;
+      border-radius:2px;
+    }
+    h1,h2,h3{
+      margin:0;
+      font-family:"Pangolin",cursive;
+      color:var(--navy);
+      line-height:.95;
+      font-weight:400;
+    }
+    h2{font-size:clamp(44px,6vw,76px)}
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:30px;
+      margin-bottom:34px;
+    }
+    .section-head p{
+      max-width:420px;
+      margin:0;
+      color:var(--storm);
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    /* ===== HERO — EDITORIAL COASTAL ===== */
+    .hero{
+      min-height:860px;
+      padding:106px 0 42px;
+      display:flex;
+      align-items:center;
+      background:
+        radial-gradient(circle at 12% 22%,rgba(126,200,227,.22),transparent 25%),
+        var(--shell);
+    }
+    .hero-card{
+      position:relative;
+      width:100%;
+      min-height:710px;
+      overflow:hidden;
+      border-radius:36px;
+      background:#dfe8ee;
+      box-shadow:0 28px 70px rgba(27,59,77,.18);
+      isolation:isolate;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute;inset:0;z-index:1;
+      background:transparent;
+      pointer-events:none;
+    }
+    .hero-img{
+      display:block;
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      max-width:none;
+      object-fit:cover;
+      object-position:center 48%;
+      z-index:0;
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute;inset:0;z-index:2;
+      background:transparent;
+      pointer-events:none;
+    }
+    .hero-stamp{
+      position:absolute;z-index:7;
+      top:30px;left:32px;
+      display:flex;align-items:center;gap:10px;
+      color:#fff;
+      font-size:10px;font-weight:900;
+      letter-spacing:.17em;text-transform:uppercase;
+      text-shadow:0 2px 10px rgba(0,0,0,.22);
+    }
+    .hero-stamp::before{content:"";width:28px;height:1px;background:#fff}
+    .hero-index{
+      position:absolute;z-index:7;right:32px;top:28px;
+      color:#fff;font-size:11px;font-weight:900;letter-spacing:.16em;
+      padding:9px 12px;border:1px solid rgba(255,255,255,.45);
+      border-radius:999px;background:rgba(27,59,77,.16);backdrop-filter:blur(8px);
+    }
+    .hero-title-wrap{
+      position:absolute;z-index:3;
+      left:4%;right:4%;top:18%;
+      padding:20px 26px 18px;
+      pointer-events:none;
+      overflow:visible;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+      border:0;
+    }
+    .hero-title-wrap::after{
+      display:none;
+    }
+    .hero-title{
+      position:relative;z-index:1;
+      margin:0;
+      color:#fff;
+      font-family:"Nunito",sans-serif;
+      font-weight:900;
+      text-transform:uppercase;
+      font-size:clamp(68px,11.7vw,166px);
+      letter-spacing:-.085em;
+      line-height:.77;
+      white-space:nowrap;
+      text-shadow:0 4px 18px rgba(27,59,77,.30),0 1px 4px rgba(0,0,0,.18);
+    }
+    .hero-title em{
+      display:block;
+      margin-left:11%;
+      font-style:normal;
+      color:#fff;
+    }
+    /* Kept hidden for the sky-only cover. */
+    .hero-sand{
+      position:absolute;z-index:4;
+      left:-3%;right:-3%;bottom:-1px;
+      height:47%;
+      background:linear-gradient(160deg,#f4e7d4 0%,#e8d8c3 58%,#ddc8ac 100%);
+      clip-path:polygon(0 22%,5% 19%,10% 23%,16% 15%,23% 20%,31% 12%,39% 18%,47% 11%,55% 19%,63% 13%,71% 20%,79% 12%,87% 18%,94% 14%,100% 18%,100% 100%,0 100%);
+      box-shadow:none;
+      display:none;
+    }
+    .hero-sand::before{
+      content:"";
+      position:absolute;inset:0;
+      opacity:.32;
+      background-image:radial-gradient(rgba(125,99,72,.22) .7px,transparent .8px);
+      background-size:12px 12px;
+      mask-image:linear-gradient(to bottom,transparent 0%,black 18%);
+    }
+    .hero-content{
+      position:absolute;z-index:6;
+      left:28px;right:28px;bottom:28px;
+      min-height:0;
+      padding:24px clamp(22px,4vw,42px);
+      display:flex;flex-direction:column;justify-content:flex-end;
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(255,255,255,.9);
+      border-radius:24px;
+      box-shadow:0 18px 45px rgba(27,59,77,.12);
+      backdrop-filter:blur(7px);
+    }
+    .hero-content::before{
+      content:"01 / TUBAN · EAST JAVA";
+      position:absolute;right:clamp(28px,6vw,82px);bottom:52px;
+      color:rgba(27,59,77,.58);font-size:10px;font-weight:900;letter-spacing:.17em;
+    }
+    .hero-kicker{
+      display:flex;align-items:center;gap:10px;
+      color:var(--coastal);font-size:11px;font-weight:900;
+      text-transform:uppercase;letter-spacing:.17em;margin-bottom:13px;
+    }
+    .hero-kicker span{width:30px;height:2px;background:currentColor;border-radius:2px}
+    .hero-sub{
+      max-width:590px;margin:0 0 20px;
+      color:var(--storm);font-size:clamp(15px,1.65vw,18px);line-height:1.55;
+    }
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:900;transition:.2s}
+    .btn-primary{background:var(--navy);color:#fff}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 9px 20px rgba(27,59,77,.18)}
+    .btn-ghost{background:rgba(255,255,255,.38);border-color:rgba(27,59,77,.2);color:var(--navy)}
+    .hero-note{
+      position:absolute;z-index:8;right:34px;top:50%;
+      width:118px;height:118px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.7);
+      display:grid;place-items:center;text-align:center;
+      font-family:"Pangolin",cursive;font-size:18px;line-height:1.05;
+      color:var(--navy);background:rgba(255,255,255,.55);backdrop-filter:blur(9px);
+      border-color:rgba(255,255,255,.9);
+      transform:rotate(7deg);
+    }
+    .hero-note small{display:block;font-family:"Nunito",sans-serif;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.13em;margin-top:4px}
+    /* ===== INTRO ===== */
+    .intro{padding:90px 0 110px}
+    .intro-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:70px;
+      align-items:center;
+    }
+    .intro-title{font-size:clamp(52px,6.5vw,88px)}
+    .intro-copy{
+      font-size:18px;
+      line-height:1.8;
+      color:var(--storm);
+      margin:22px 0 28px;
+    }
+    .facts{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    }
+    .fact{
+      background:rgba(255,255,255,.56);
+      border:1px solid var(--line);
+      padding:17px;
+      border-radius:18px;
+    }
+    .fact b{display:block;font-size:20px;color:var(--navy)}
+    .fact span{font-size:11px;color:#667983}
+    .mini-map{
+      min-height:390px;
+      border-radius:30px;
+      background:
+        radial-gradient(circle at 70% 25%,rgba(255,255,255,.75) 0 4px,transparent 5px),
+        linear-gradient(145deg,var(--powder),var(--sea-mist));
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(75,163,199,.18);
+    }
+    .mini-map::before{
+      content:"";
+      position:absolute;
+      width:650px;height:260px;
+      background:rgba(255,255,255,.55);
+      border-radius:50%;
+      transform:rotate(-17deg);
+      top:180px;left:-130px;
+    }
+    .map-label{
+      position:absolute;
+      right:34px;top:34px;
+      font-family:"Pangolin",cursive;
+      font-size:32px;
+      color:var(--navy);
+    }
+    .pin{
+      position:absolute;left:57%;top:48%;
+      width:25px;height:25px;
+      background:var(--navy);
+      border-radius:50% 50% 50% 0;
+      transform:rotate(-45deg);
+      box-shadow:0 8px 20px rgba(27,59,77,.25);
+    }
+    .pin::after{
+      content:"";
+      position:absolute;width:8px;height:8px;border-radius:50%;
+      background:white;left:8px;top:8px;
+    }
+    .map-copy{
+      position:absolute;left:32px;bottom:30px;
+      max-width:270px;
+    }
+    .map-copy strong{font-family:"Pangolin";font-size:29px;font-weight:400}
+    .map-copy p{font-size:13px;line-height:1.6;margin:7px 0 0}
+
+    /* ===== ATTRACTIONS ===== */
+    .attractions{padding:110px 0;background:var(--sea-mist)}
+    .feature-grid{
+      display:grid;
+      grid-template-columns:1.35fr .65fr;
+      gap:18px;
+    }
+    .feature-card{
+      position:relative;
+      min-height:540px;
+      overflow:hidden;
+      border-radius:30px;
+      background:var(--navy);
+    }
+    .feature-card img{width:100%;height:100%;object-fit:cover}
+    .feature-card::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(0deg,rgba(12,35,47,.8),transparent 60%);
+    }
+    .feature-info{
+      position:absolute;z-index:2;left:30px;right:30px;bottom:28px;color:white;
+    }
+    .feature-info h3{font-size:58px;color:white}
+    .feature-info p{max-width:520px;line-height:1.65;margin:10px 0 0;color:#eaf9fc}
+    .side-stack{display:grid;gap:18px}
+    .side-card{
+      padding:28px;
+      border-radius:30px;
+      background:var(--shell);
+      border:1px solid var(--line);
+      min-height:261px;
+      display:flex;flex-direction:column;justify-content:space-between;
+    }
+    .side-card:nth-child(2){background:var(--sand)}
+    .number{
+      font-family:"Pangolin";font-size:30px;color:var(--coastal)
+    }
+    .side-card h3{font-size:40px}
+    .side-card p{font-size:14px;line-height:1.7;margin:12px 0 0;color:var(--storm)}
+
+    /* ===== ACTIVITIES ===== */
+    .activities{padding:110px 0}
+    .activity-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .activity{
+      min-height:430px;
+      padding:0;
+      border-radius:25px;
+      background:#fff;
+      border:1px solid var(--line);
+      position:relative;
+      overflow:hidden;
+      transition:.25s;
+      display:flex;
+      flex-direction:column;
+    }
+    .activity:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .activity-media{
+      height:205px;
+      position:relative;
+      overflow:hidden;
+      background:var(--sea-mist);
+    }
+    .activity-media img{
+      width:100%;height:100%;object-fit:cover;display:block;
+      filter:saturate(1.04) contrast(1.03);
+      transition:transform .45s,filter .35s;
+    }
+    .activity:hover .activity-media img{transform:scale(1.04);filter:saturate(1.08) contrast(1.04)}
+    .activity-media::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg,rgba(12,35,47,0) 48%,rgba(12,35,47,.34));
+      pointer-events:none;
+    }
+    .activity .icon{
+      position:absolute;z-index:2;left:20px;bottom:18px;
+      width:52px;height:52px;
+      border-radius:50%;
+      background:var(--navy);
+      color:white;
+      display:grid;place-items:center;
+      font-size:22px;
+      box-shadow:0 10px 24px rgba(27,59,77,.2);
+    }
+    .activity-content{padding:20px 22px 24px;position:relative;flex:1}
+    .activity-content h3{font-size:29px;margin:8px 0 0}
+    .activity-content p{font-size:13px;line-height:1.65;color:#65767e;margin:9px 0 0}
+    .activity-credit{font-size:9px;color:#9aa8ad;margin-top:14px;display:block}
+
+    /* ===== VIDEO ===== */
+    .video-section{padding:110px 0;background:var(--shell)}
+    .video-card{display:grid;grid-template-columns:1.35fr .65fr;gap:18px;background:var(--navy);border-radius:32px;padding:18px;overflow:hidden;box-shadow:var(--shadow)}
+    .video-embed{min-height:500px;border-radius:24px;background:linear-gradient(145deg,#dff3f5,#7ec8e3);display:grid;place-items:center;overflow:hidden}
+    .video-embed iframe{display:block;width:100%;height:100%;min-height:500px;border:0;border-radius:24px;background:#000}
+    .video-side{border-radius:24px;background:var(--sand);padding:34px;display:flex;flex-direction:column;justify-content:center}
+    .video-side h3{font-size:52px;margin:18px 0 12px}
+    .video-side p{line-height:1.7;color:var(--storm);font-size:14px}
+    .video-link{align-self:flex-start;margin-top:15px;background:var(--navy);color:#fff}
+
+    /* ===== UMKM ===== */
+    .umkm{
+      padding:110px 0;
+      background:var(--navy);
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
+    .umkm::before{
+      content:"DERMAGA";
+      position:absolute;
+      right:-80px;top:30px;
+      font-family:"Pangolin";
+      font-size:190px;
+      color:rgba(255,255,255,.035);
+      transform:rotate(-8deg);
+    }
+    .umkm .section-head h2{color:white}
+    .umkm .section-head p{color:#cce5ec}
+    .food-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      position:relative;
+    }
+    .food-card{
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:28px;
+      padding:28px;
+      background:rgba(255,255,255,.07);
+    }
+    .food-card.large{min-height:350px;background:linear-gradient(145deg,rgba(126,200,227,.2),rgba(255,255,255,.04))}
+    .food-card h3{color:white;font-size:48px}
+    .food-card p{color:#d8edf2;line-height:1.7;font-size:14px}
+    .food-tag{
+      display:inline-block;padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.25);
+      font-size:10px;text-transform:uppercase;letter-spacing:.12em;
+      margin-bottom:22px;
+    }
+    .umkm-list{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:18px;position:relative}
+    .umkm-item{border:1px solid rgba(255,255,255,.14);border-radius:26px;overflow:hidden;background:rgba(255,255,255,.065);display:grid;grid-template-columns:.9fr 1.1fr;min-height:270px}
+    .umkm-item-media{min-height:270px;background:#234f63;overflow:hidden}
+    .umkm-item-media img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(1.02) contrast(1.02)}
+    .umkm-item-copy{padding:24px 24px 22px;display:flex;flex-direction:column;justify-content:center}
+    .umkm-item-copy h4{font-family:'Pangolin';font-size:31px;font-weight:400;line-height:1.05;margin:0 0 10px;color:#fff}
+    .umkm-item-copy p{font-size:12px;line-height:1.65;color:#d8edf2;margin:0 0 12px}
+    .umkm-location{font-size:11px;color:#bfe3eb;line-height:1.55;margin-bottom:14px}
+    .umkm-location strong{display:block;color:#fff;font-size:11px;margin-bottom:3px;letter-spacing:.04em;text-transform:uppercase}
+    .umkm-link{display:inline-flex;align-self:flex-start;padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.24);color:#fff;font-size:10px;font-weight:900;text-decoration:none;letter-spacing:.05em}
+    .umkm-note{margin-top:14px;font-size:10px;line-height:1.6;color:#9fc8d1;position:relative}
+
+    /* ===== LOCATION ===== */
+    .location{padding:110px 0;background:var(--shell)}
+    .location-shell{
+      display:grid;grid-template-columns:.72fr 1.28fr;gap:18px;
+      background:var(--navy);border-radius:34px;padding:14px;box-shadow:var(--shadow);overflow:hidden;
+    }
+    .location-copy{padding:38px 34px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;min-height:520px}
+    .location-copy .eyebrow{color:#9ed9ea}
+    .location-copy h2{color:#fff;font-size:clamp(48px,5vw,70px);margin:18px 0}
+    .location-copy p{color:#d5e9ee;line-height:1.75;font-size:14px;margin:0 0 22px}
+    .location-address{padding:17px 18px;border:1px solid rgba(255,255,255,.14);border-radius:20px;background:rgba(255,255,255,.06);margin-bottom:18px}
+    .location-address strong{display:block;font-family:"Pangolin";font-size:25px;font-weight:400;margin-bottom:4px}
+    .location-address span{font-size:12px;color:#b9d8df;line-height:1.6}
+    .map-wrap{position:relative;min-height:520px;border-radius:26px;overflow:hidden;background:#b9dfe7}
+    .google-map{position:absolute;inset:0;width:100%;height:100%;min-height:520px;border:0;display:block}
+    .map-badge{position:absolute;z-index:500;left:18px;top:18px;padding:9px 12px;border-radius:999px;background:rgba(246,241,233,.92);color:var(--navy);font-size:11px;font-weight:900;box-shadow:0 8px 25px rgba(0,0,0,.12)}
+    .map-pin-label{font-family:"Nunito",sans-serif;font-weight:900;color:var(--navy)}
+    .route-btn{width:100%;margin-top:4px}
+    .map-column{display:flex;flex-direction:column;gap:12px;min-width:0}
+    .google-reviews{position:relative}
+    .google-reviews-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+    .google-reviews-title{font-size:10px;letter-spacing:.15em;color:var(--storm);font-weight:900;text-transform:uppercase}
+    .google-reviews-summary{font-size:12px;color:var(--navy);font-weight:900;white-space:nowrap}
+    .google-reviews-viewport{overflow:hidden;border-radius:16px}
+    .google-reviews-track{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:1px 1px 5px;-ms-overflow-style:none;scrollbar-width:none}
+    .google-reviews-track::-webkit-scrollbar{display:none}
+    .google-review-card{flex:0 0 100%;height:94px;box-sizing:border-box;scroll-snap-align:start;background:#F6F1E9;border:1px solid rgba(47,72,88,.10);border-radius:16px;padding:8px 13px;box-shadow:none}
+    .google-review-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
+    .google-review-person{font-size:11.5px;font-weight:900;color:var(--navy)}
+    .google-review-stars{letter-spacing:.07em;font-size:11.5px;color:#e8a23a;white-space:nowrap}
+    .google-review-card blockquote{margin:0;color:var(--navy);font-family:"Balsamiq Sans",sans-serif;font-size:12px;line-height:1.32}
+    .google-review-card-meta{margin-top:4px;font-size:7.8px;color:#6c7c84;line-height:1.2}
+    .google-review-card-meta a{color:inherit}
+    .google-reviews-controls{display:flex;justify-content:flex-end;gap:6px;margin-top:6px}
+    .google-review-nav{width:29px;height:29px;border:1px solid rgba(47,72,88,.15);border-radius:50%;background:#fff;color:var(--navy);font-size:15px;font-weight:900;cursor:pointer;display:grid;place-items:center}
+    .google-review-nav:hover{transform:translateY(-1px)}
+    @media (max-width:700px){
+      .google-reviews-top{align-items:flex-start;flex-direction:column;gap:4px}
+      .google-review-card{flex-basis:92%;height:100px}
+    }
+
+    /* ===== INFO ===== */
+    .info{padding:110px 0}
+    .info-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:12px;
+    }
+    .info-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:25px;
+      padding:28px;
+      min-height:230px;
+    }
+    .info-card h3{font-size:38px;margin:15px 0 10px}
+    .info-card p,.info-card li{font-size:13px;line-height:1.7;color:#64757d}
+    .info-card ul{padding-left:18px;margin-bottom:0}
+    .info-wide{
+      grid-column:span 2;
+      background:var(--sand);
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery{
+      padding:110px 0 120px;
+      background:var(--sea-mist);
+    }
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      grid-template-rows:260px 260px;
+      gap:12px;
+    }
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      cursor:pointer;
+      background:var(--powder);
+    }
+    .gallery-item:first-child{grid-row:span 2}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.4s;filter:saturate(1.05) contrast(1.04);image-rendering:auto}
+    .gallery-item:hover img{transform:scale(1.05)}
+    .gallery-item span{
+      position:absolute;left:14px;bottom:14px;
+      background:rgba(27,59,77,.75);
+      color:#fff;
+      padding:7px 11px;border-radius:999px;
+      font-size:10px;font-weight:800;
+      backdrop-filter:blur(8px);
+    }
+
+    /* ===== FOOTER ===== */
+    footer{
+      background:var(--shell);
+      padding:38px 0;
+      border-top:1px solid var(--line);
+    }
+    .footer-row{
+      display:flex;justify-content:space-between;gap:20px;align-items:center;
+    }
+    .footer-brand{font-family:"Pangolin";font-size:28px;color:var(--navy)}
+    .footer-row p{font-size:11px;color:#78868b;margin:0;max-width:520px;line-height:1.6}
+    .footer-contact{display:flex;flex-direction:column;gap:5px;min-width:175px}
+    .footer-contact strong{font-size:10px;letter-spacing:.16em;color:var(--storm);font-weight:900}
+    .footer-contact a{font-size:12px;color:var(--navy);text-decoration:none;font-weight:800}
+    .footer-contact a:hover{text-decoration:underline}
+    .top{
+      width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+      background:var(--navy);color:white;font-weight:900;
+    }
+
+    /* ===== VISUAL JOURNAL ===== */
+    .visual-journal{padding:105px 0;background:#fff}
+    .moment-slider{overflow:hidden;padding:6px 0 24px;position:relative}
+    .moment-track{display:flex;gap:16px;will-change:transform;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+    .moment-card{position:relative;flex:0 0 calc((100% - 16px)/2);height:430px;border-radius:28px;overflow:hidden;background:var(--navy);box-shadow:0 12px 30px rgba(27,59,77,.10)}
+    .moment-card img{width:100%;height:100%;object-fit:cover;transition:.5s;filter:saturate(1.05) contrast(1.04);image-rendering:auto}
+    .moment-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(12,35,47,.8),transparent 58%)}
+    .moment-card:hover img{transform:scale(1.05)}
+    .moment-card>div{position:absolute;z-index:2;left:24px;right:24px;bottom:22px;color:white}
+    .moment-card span{font-family:"Pangolin";font-size:25px;color:#bde9f1;display:block}
+    .moment-card strong{display:block;font-family:"Pangolin";font-size:39px;font-weight:400}
+    .moment-card small{display:block;font-size:12px;line-height:1.5;margin-top:4px;color:#e4f5f8}
+    .slider-controls{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:14px}
+    .slider-controls button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--shell);color:var(--navy);cursor:pointer;font-size:18px;transition:.2s}.slider-controls button:hover:not(:disabled){transform:translateY(-2px);background:#fff}.slider-controls button:disabled{opacity:.35;cursor:default}
+    .slider-dots{display:flex;gap:6px}.slider-dot{width:7px;height:7px;border:0;border-radius:50%;background:#b8c6ca;padding:0}.slider-dot.active{background:var(--navy);width:22px;border-radius:8px}
+
+    /* ===== INTERACTIVE SPOTLIGHT ===== */
+    .spotlight{padding:105px 0;background:var(--sand)}
+    .spotlight-inner{display:grid;grid-template-columns:.75fr 1.25fr;gap:18px;min-height:560px}
+    .spot-copy{background:var(--navy);border-radius:30px;padding:42px;color:white;display:flex;flex-direction:column;justify-content:center}
+    .spot-copy h2{color:white;font-size:clamp(48px,5vw,70px);margin:14px 0}
+    .spot-copy p{color:#d7ebef;line-height:1.7;font-size:14px;max-width:390px}
+    .spot-buttons{display:flex;gap:7px;flex-wrap:wrap;margin-top:28px}
+    .spot-btn{border:1px solid rgba(255,255,255,.3);background:transparent;color:white;border-radius:999px;padding:10px 14px;font-size:10px;letter-spacing:.12em;font-weight:900;cursor:pointer}.spot-btn.active{background:white;color:var(--navy)}
+    .spot-photo{position:relative;overflow:hidden;border-radius:30px;min-height:560px;background:var(--coastal)}
+    .spot-photo img{width:100%;height:100%;object-fit:cover;transition:opacity .2s,transform .5s;filter:saturate(1.05) contrast(1.04);image-rendering:auto}.spot-photo:hover img{transform:scale(1.03)}
+    .spot-caption{position:absolute;left:22px;right:22px;bottom:20px;background:rgba(27,59,77,.75);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);color:white;padding:14px 16px;border-radius:16px;font-size:12px;line-height:1.5}
+
+    /* ===== GALLERY FILTERS ===== */
+    .gallery-filters{display:flex;gap:7px;flex-wrap:wrap;margin:-8px 0 20px}.gallery-filter{border:1px solid var(--line);background:transparent;color:var(--storm);border-radius:999px;padding:9px 14px;font-size:11px;font-weight:900;cursor:pointer}.gallery-filter.active{background:var(--navy);color:white;border-color:var(--navy)}
+    .gallery-item.hidden{display:none}
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox{
+      position:fixed;inset:0;z-index:100;
+      display:none;place-items:center;
+      background:rgba(7,25,34,.88);
+      padding:30px;
+    }
+    .lightbox.open{display:grid}
+    .lightbox img{max-height:86vh;max-width:92vw;border-radius:20px;box-shadow:0 20px 70px rgba(0,0,0,.4)}
+    .close{
+      position:absolute;top:20px;right:20px;
+      width:44px;height:44px;border:1px solid rgba(255,255,255,.4);
+      border-radius:50%;background:rgba(255,255,255,.1);color:white;cursor:pointer;font-size:20px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:900px){
+      .nav-links{
+        display:none;
+        position:absolute;top:64px;left:0;right:0;
+        padding:12px;background:rgba(246,241,233,.97);
+        border:1px solid var(--line);border-radius:22px;
+        flex-direction:column;align-items:stretch;
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{text-align:center}
+      .menu-btn{display:block}
+      .nav-cta{background:var(--navy)!important}
+      .intro-grid,.feature-grid,.food-grid,.video-card,.location-shell{grid-template-columns:1fr}
+      .activity-grid{grid-template-columns:1fr 1fr}
+      .info-grid{grid-template-columns:1fr 1fr}
+      .info-wide{grid-column:span 2}
+      .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px}
+      .gallery-item:first-child{grid-row:span 2}
+    }
+    @media(max-width:600px){
+      .wrap{width:min(100% - 24px,1180px)}
+      .nav{top:9px;width:calc(100% - 18px);padding-left:14px}
+      .brand{font-size:21px}
+      .hero{padding-top:78px;min-height:730px}
+      .hero-card{min-height:650px;border-radius:25px}
+      .hero-title-wrap{top:17%;left:18px;right:18px;padding:22px 18px 20px;border-radius:22px}
+      .hero-title{font-size:clamp(58px,16vw,92px);white-space:normal;line-height:.78}
+      .hero-title em{margin-left:7%}
+      .hero-sand{display:none}
+      .hero-content{left:18px;right:18px;bottom:18px;min-height:0;padding:20px 18px}
+      .hero-content::before{display:none}
+      .hero-note{width:94px;height:94px;right:18px;top:45%;font-size:14px}
+      .hero-stamp{left:22px;top:22px;font-size:8px}
+      .hero-index{right:18px;top:18px;font-size:8px}
+      .location-copy{min-height:auto;padding:28px 22px}
+
+      .moment-card{flex-basis:82vw}
+      .umkm-list{grid-template-columns:1fr}
+      .umkm-item{grid-template-columns:1fr;min-height:0}
+      .umkm-item-media{min-height:220px}
+      .activity{min-height:390px}
+      .activity-media{height:185px}
+      .map-wrap,.google-map{min-height:420px}
+      .intro,.attractions,.activities,.video-section,.umkm,.location,.info,.gallery{padding:75px 0}
+      .section-head{display:block}
+      .section-head p{margin-top:18px}
+      .facts{grid-template-columns:1fr}
+      .activity-grid,.info-grid,.gallery-grid{grid-template-columns:1fr}
+      .info-wide{grid-column:auto}
+      .gallery-grid{grid-template-rows:300px 220px 220px 220px}
+      .gallery-item:first-child{grid-row:auto}
+      .footer-row{align-items:flex-start;flex-direction:column}
+    }
+
+    /* ===== RESPONSIVE CONSISTENCY POLISH ===== */
+    html,body{max-width:100%;overflow-x:hidden}
+    img,iframe{max-width:100%}
+
+    @media (max-width:900px){
+      .nav{width:calc(100% - 20px);gap:10px}
+      .brand{font-size:22px}
+      .nav-links{max-height:calc(100vh - 88px);overflow:auto}
+      .section-head{gap:18px}
+      .section-head p{max-width:100%}
+      .feature-card{min-height:480px}
+      .feature-info h3{font-size:50px}
+      .video-embed{min-height:0;aspect-ratio:16/9}
+      .video-embed iframe{min-height:0;height:100%;aspect-ratio:16/9}
+      .spotlight-inner{min-height:0}
+      .spot-copy,.spot-photo{min-height:480px}
+    }
+
+    @media (max-width:600px){
+      .wrap{width:calc(100% - 20px);max-width:none}
+      .nav{top:8px;width:calc(100% - 14px);padding:8px 9px 8px 12px;border-radius:999px;gap:8px}
+      .brand{font-size:20px;gap:8px}
+      .brand-mark{width:32px;height:32px;font-size:13px}
+      .menu-btn{width:40px;height:40px;flex:0 0 40px}
+      .nav-links{top:58px;left:0;right:0;padding:10px;border-radius:20px;max-height:calc(100vh - 74px);overflow-y:auto}
+      .nav-links a{font-size:12px;padding:9px 10px}
+
+      .hero{padding:70px 0 20px;min-height:auto}
+      .hero-card{height:620px;min-height:0;border-radius:24px}
+      .hero-title-wrap{top:16%;left:10px;right:10px;padding:10px 8px}
+      .hero-title{font-size:clamp(44px,11.8vw,78px);letter-spacing:-.075em;line-height:.80;white-space:normal}
+      .hero-title em{margin-left:8%}
+      .hero-stamp{left:14px;top:14px;font-size:7px;letter-spacing:.14em}
+      .hero-index{right:14px;top:14px;font-size:7px;padding:7px 9px}
+      .hero-content{left:12px;right:12px;bottom:12px;padding:18px 16px;border-radius:20px}
+      .hero-content::before{display:none}
+      .hero-kicker{font-size:9px;margin-bottom:10px}
+      .hero-sub{font-size:14px;line-height:1.5;margin-bottom:14px}
+      .hero-actions{gap:8px}
+      .hero-actions .btn{flex:1 1 140px;min-height:42px;padding:0 14px;font-size:11px}
+      .hero-note{width:76px;height:76px;right:14px;top:43%;font-size:13px}
+      .hero-note small{font-size:7px}
+
+      h2{font-size:clamp(40px,12vw,62px)}
+      .section-head{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:26px}
+      .section-head p{font-size:13px;line-height:1.6;margin:0;max-width:100%}
+
+      .intro,.attractions,.activities,.video-section,.umkm,.location,.info,.gallery,.visual-journal,.spotlight{padding:72px 0}
+      .intro{padding-bottom:82px}
+      .intro-grid{gap:24px}
+      .intro-copy{font-size:16px;line-height:1.7;margin:18px 0 24px}
+      .facts{gap:8px}
+      .fact{padding:14px}
+      .fact b{font-size:18px}
+      .mini-map{min-height:285px;border-radius:24px}
+      .map-label{font-size:25px;right:24px;top:24px}
+      .map-copy{left:24px;bottom:24px;max-width:210px}
+      .map-copy strong{font-size:24px}
+
+      .feature-card{min-height:430px;border-radius:24px}
+      .feature-info{left:22px;right:22px;bottom:22px}
+      .feature-info h3{font-size:43px}
+      .feature-info p{font-size:13px;line-height:1.6}
+      .side-stack{gap:12px}
+      .side-card{min-height:215px;padding:22px;border-radius:24px}
+      .side-card h3{font-size:34px}
+
+      .activity-grid{gap:12px}
+      .activity{min-height:0;border-radius:22px}
+      .activity-media{height:180px}
+      .activity-content{padding:18px 18px 20px}
+      .activity-content h3{font-size:27px}
+      .activity-content p{font-size:12px}
+
+      .video-card{padding:10px;border-radius:24px;gap:10px}
+      .video-embed{min-height:0;aspect-ratio:16/9;border-radius:18px}
+      .video-embed iframe{min-height:0;height:100%;border-radius:18px;aspect-ratio:16/9}
+      .video-side{padding:24px;border-radius:18px}
+      .video-side h3{font-size:40px}
+      .video-side p{font-size:13px;line-height:1.6}
+
+      .food-grid{grid-template-columns:1fr;gap:12px}
+      .food-card{padding:22px;border-radius:24px}
+      .food-card.large{min-height:280px}
+      .food-card h3{font-size:39px}
+      .food-card p{font-size:13px;line-height:1.65}
+      .umkm-list{grid-template-columns:1fr;gap:12px}
+      .umkm-item{border-radius:22px}
+      .umkm-item-media{min-height:205px}
+      .umkm-item-copy{padding:20px}
+      .umkm-item-copy h4{font-size:28px}
+
+      .location-shell{padding:10px;gap:10px;border-radius:28px}
+      .location-copy{padding:26px 20px;min-height:auto}
+      .location-copy h2{font-size:clamp(44px,12vw,62px);margin:14px 0}
+      .location-copy p{font-size:13px;line-height:1.65}
+      .location-address{padding:15px 16px}
+      .location-address strong{font-size:22px}
+      .map-wrap{min-height:360px;border-radius:20px}
+      .google-map{min-height:360px}
+      .map-badge{left:12px;top:12px;font-size:9px;padding:8px 10px}
+      .google-reviews-top{gap:3px}
+      .google-reviews-summary{font-size:11px}
+      .google-review-card{height:96px;flex-basis:100%;padding:8px 11px}
+      .google-review-person,.google-review-stars{font-size:11px}
+      .google-review-card blockquote{font-size:11px;line-height:1.3}
+      .google-review-card-meta{font-size:7.2px;line-height:1.15}
+
+      .info-grid{grid-template-columns:1fr;gap:10px}
+      .info-card{padding:22px;border-radius:22px;min-height:0}
+      .info-card h3{font-size:33px}
+
+      .moment-slider{padding-bottom:18px}
+      .moment-card{flex-basis:88vw;height:360px;border-radius:24px}
+      .moment-card>div{left:18px;right:18px;bottom:18px}
+      .moment-card span{font-size:22px}
+      .moment-card strong{font-size:32px}
+
+      .spotlight-inner{grid-template-columns:1fr;gap:10px;min-height:0}
+      .spot-copy{padding:28px;min-height:400px;border-radius:24px}
+      .spot-photo{min-height:400px;border-radius:24px}
+      .spot-caption{left:14px;right:14px;bottom:14px;padding:12px 13px}
+      .spot-buttons{margin-top:20px}
+      .spot-btn{font-size:9px;padding:9px 12px}
+
+      .gallery-filters{gap:6px;margin:-2px 0 18px}
+      .gallery-filter{padding:8px 12px;font-size:10px}
+      .gallery-grid{grid-template-columns:1fr;grid-template-rows:300px 220px 220px 220px;gap:10px}
+      .gallery-item{border-radius:20px}
+      .gallery-item:first-child{grid-row:auto}
+
+      .footer-row{align-items:flex-start;flex-direction:column;gap:14px}
+      .footer-contact{min-width:0;width:100%}
+      .top{width:40px;height:40px}
+
+      .lightbox{padding:12px}
+      .lightbox img{max-width:96vw;max-height:80vh;border-radius:16px}
+      .close{top:12px;right:12px;width:40px;height:40px}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <a class="brand" href="#home" aria-label="Pantai Dermaga">
+      <span class="brand-mark">PD</span>
+      Pantai Dermaga
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#tentang">Tentang</a>
+      <a href="#daya-tarik">Daya Tarik</a>
+      <a href="#aktivitas">Aktivitas</a>
+      <a href="#video">Video</a>
+      <a href="#umkm">Kuliner</a>
+      <a href="#info">Info</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#lokasi">Lokasi</a>
+      <a class="nav-cta" href="#lokasi">Lihat peta</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="hero-card">
+          <img
+            class="hero-img"
+            src="https://wsrv.nl/?url=https%3A%2F%2Fassets.pikiran-rakyat.com%2Fcrop%2F0x0%253A0x0%2F1200x675%2Fwebp%2Fphoto%2F2024%2F12%2F05%2F1917709372.jpg&w=2400&q=100&output=webp""
+            fetchpriority="high" decoding="async"
+            alt="Foto Pantai Dermaga dengan dermaga, laut, dan langit cerah sebagai cover"
+          />
+
+          <div class="hero-stamp">Where white sand meets the blue sea</div>
+          <div class="hero-index">PANTAI DERMAGA · 01</div>
+
+          <div class="hero-title-wrap" aria-hidden="true">
+            <div class="hero-title">Pantai<em>Dermaga</em></div>
+          </div>
+
+          <div class="hero-note">coastal<br>escape<small>Jenu · Tuban</small></div>
+
+          <!-- Foreground sand/paper layer intentionally covers the lower part of the title. -->
+          <div class="hero-sand" aria-hidden="true"></div>
+
+          <div class="hero-content">
+            <div class="hero-kicker"><span></span> Pesona Pantai Dermaga</div>
+            <p class="hero-sub">
+              Nikmati hamparan pasir putih, air laut yang jernih, dan suasana alam yang menenangkan
+              di salah satu pesona wisata Kabupaten Tuban.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#daya-tarik">Jelajahi destinasi ↓</a>
+              <a class="btn btn-ghost" href="#video">Lihat video ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro" id="tentang">
+      <div class="wrap intro-grid">
+        <div>
+          <span class="eyebrow">01 — Tentang destinasi</span>
+          <h2 class="intro-title">Laut biru,<br>ruang untuk bernapas.</h2>
+          <p class="intro-copy">
+            Pantai Dermaga berada di Desa Purworejo, Kecamatan Jenu, Kabupaten Tuban.
+            Karakter pantainya yang luas dan landai berpadu dengan bangunan dermaga di sisi barat,
+            menciptakan lanskap yang mudah dikenali—terutama ketika sore datang.
+          </p>
+          <div class="facts">
+            <div class="fact"><b>Jenu</b><span>Kecamatan</span></div>
+            <div class="fact"><b>Purworejo</b><span>Desa</span></div>
+            <div class="fact"><b>Sunset</b><span>Momen favorit</span></div>
+          </div>
+        </div>
+
+        <div class="mini-map" aria-label="Ilustrasi lokasi Pantai Dermaga">
+          <div class="map-label">Tuban, Jawa Timur</div>
+          <div class="pin"></div>
+          <div class="map-copy">
+            <strong>Pantai Dermaga</strong>
+            <p>Destinasi pesisir dengan garis pantai luas, suasana santai, dan siluet dermaga sebagai elemen visual utama.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISUAL JOURNAL -->
+    <section class="visual-journal" id="momen">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">02 — Visual journal</span>
+            <h2>See it from<br>every angle.</h2>
+          </div>
+          <p>Gunakan tombol atau titik navigasi untuk berpindah antar momen—setiap langkah menampilkan sudut yang berbeda.</p>
+        </div>
+        <div class="moment-slider" id="momentSlider">
+          <article class="moment-card active">
+            <img src="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Fbersantai-tepi-pantai.jpg&w=2400&q=100&output=webp" alt="Suasana teduh di Pantai Dermaga" loading="lazy" decoding="async">
+            <div><span>01</span><strong>White sand</strong><small>Ruang luas untuk menikmati pesisir.</small></div>
+          </article>
+          <article class="moment-card">
+            <img src="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Ffoto-di-pantai-tuban.jpg&w=2400&q=100&output=webp" alt="Pengunjung dan dermaga Pantai Dermaga" loading="lazy" decoding="async">
+            <div><span>02</span><strong>Blue horizon</strong><small>Dermaga membingkai garis laut.</small></div>
+          </article>
+          <article class="moment-card">
+            <img src="https://wsrv.nl/?url=https%3A%2F%2Fwww.nativeindonesia.com%2Ffoto%2F2024%2F08%2Fberswafoto-di-pantai-tuban.jpg&w=2400&q=100&output=webp" alt="Pengunjung bermain di air Pantai Dermaga" loading="lazy" decoding="async">
+            <div><span>03</span><strong>Coastal life</strong><small>Datang, bermain, dan menikmati air dangkal.</small></div>
+          </article>
+          <article class="moment-card">
+            <img src="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Fsunset-di-pantai-dermaga.jpg&w=2400&q=100&output=webp" alt="Matahari terbenam di Pantai Dermaga" loading="lazy" decoding="async">
+            <div><span>04</span><strong>Golden hour</strong><small>Cahaya senja mengubah seluruh lanskap.</small></div>
+          </article>
+        </div>
+        <div class="slider-controls">
+          <button id="prevMoment" aria-label="Foto sebelumnya">←</button>
+          <div class="slider-dots" id="momentDots"></div>
+          <button id="nextMoment" aria-label="Foto berikutnya">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATTRACTIONS -->
+    <section class="attractions" id="daya-tarik">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">03 — Daya tarik</span>
+            <h2>Dermaga sebagai<br>ikon wisata.</h2>
+          </div>
+          <p>
+            Struktur dermaga yang menjorok ke laut menjadi pembeda utama Pantai Dermaga:
+            sebuah garis visual kuat yang menyatu dengan laut, pasir, dan langit.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <img src="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Ffoto-di-pantai-tuban.jpg&w=2400&q=100&output=webp" alt="Pantai Dermaga Tuban dengan dermaga terlihat jelas di sisi laut" loading="lazy" decoding="async">
+            <div class="feature-info">
+              <span class="eyebrow" style="color:#fff">Ikon utama</span>
+              <h3>Silhouette<br>of the Sea</h3>
+              <p>Dermaga dan garis pantai membentuk komposisi fotogenik yang semakin kuat saat cahaya senja berubah hangat.</p>
+            </div>
+          </article>
+
+          <div class="side-stack">
+            <article class="side-card">
+              <span class="number">01</span>
+              <div>
+                <h3>Pasir luas & landai</h3>
+                <p>Ruang terbuka untuk berjalan santai, bermain pasir, atau menikmati angin laut dari tepi pantai.</p>
+              </div>
+            </article>
+            <article class="side-card">
+              <span class="number">02</span>
+              <div>
+                <h3>Senja yang khas</h3>
+                <p>Datang menjelang sore untuk menikmati perpaduan cahaya matahari, laut, dan siluet dermaga.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIVITIES -->
+    <section class="activities" id="aktivitas">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">04 — Aktivitas</span>
+            <h2>Hari yang<br>dibuat santai.</h2>
+          </div>
+          <p>Pilih ritme sendiri: menyusuri pesisir, berburu foto, menikmati senja, atau sekadar duduk mendengar ombak.</p>
+        </div>
+
+        <div class="activity-grid">
+          <article class="activity">
+            <div class="activity-media">
+              <img src="https://wsrv.nl/?url=https%3A%2F%2Ftubankab.go.id%2Ffiles%2F2024-07%2Fpantai-dermaga.jpg&w=1600&q=95&output=webp" alt="Pengunjung menikmati garis pantai Pantai Dermaga" loading="lazy" decoding="async" decoding="async">
+              <div class="icon">↗</div>
+            </div>
+            <div class="activity-content">
+              <h3>Jelajah pesisir</h3>
+              <p>Susuri garis pantai yang lapang dan nikmati perubahan suasana dari siang menuju sore.</p>
+              <span class="activity-credit">Foto: Pemkab Tuban</span>
+            </div>
+          </article>
+          <article class="activity">
+            <div class="activity-media">
+              <img src="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Ffoto-di-pantai-tuban.jpg&w=1600&q=95&output=webp" alt="Spot foto dengan dermaga di Pantai Dermaga" loading="lazy" decoding="async" decoding="async">
+              <div class="icon">◎</div>
+            </div>
+            <div class="activity-content">
+              <h3>Hunting foto</h3>
+              <p>Manfaatkan dermaga, garis air, pasir, dan cahaya senja sebagai elemen komposisi.</p>
+              <span class="activity-credit">Foto: NativeIndonesia</span>
+            </div>
+          </article>
+          <article class="activity">
+            <div class="activity-media">
+              <img src="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Fsunset-di-pantai-dermaga.jpg&w=1600&q=95&output=webp" alt="Golden hour di Pantai Dermaga" loading="lazy" decoding="async" decoding="async">
+              <div class="icon">☼</div>
+            </div>
+            <div class="activity-content">
+              <h3>Menikmati sunset</h3>
+              <p>Luangkan waktu menjelang matahari terbenam untuk melihat siluet dermaga dari bibir pantai.</p>
+              <span class="activity-credit">Foto: NativeIndonesia</span>
+            </div>
+          </article>
+          <article class="activity">
+            <div class="activity-media">
+              <img src="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Fpantai-dermaga.jpg&w=1600&q=95&output=webp" alt="Suasana pengunjung di Pantai Dermaga" loading="lazy" decoding="async" decoding="async">
+              <div class="icon">⌁</div>
+            </div>
+            <div class="activity-content">
+              <h3>Ruang komunitas</h3>
+              <p>Area pantai yang luas dapat menjadi ruang bertemu, berkegiatan, dan menikmati suasana pesisir bersama.</p>
+              <span class="activity-credit">Foto: NativeIndonesia</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="video-section" id="video">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">05 — Video</span>
+            <h2>See Dermaga<br>in motion.</h2>
+          </div>
+          <p>Saksikan video promosi Pantai Dermaga Tuban di bawah ini untuk melihat keindahan lanskap laut, pesona matahari terbenam yang eksotis, serta keseruan aktivitas wisata di pesisir Kecamatan Jenu!</p>
+        </div>
+
+        <div class="video-card">
+          <div class="video-embed">
+            <iframe
+              id="dermaga-tiktok-player"
+              src="https://www.tiktok.com/player/v1/7685349391103823124?autoplay=1&muted=1&loop=1&controls=1&description=0&music_info=0&rel=0"
+              title="Video promosi Pantai Dermaga Tuban"
+              allow="autoplay; fullscreen"
+              loading="lazy" decoding="async"
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <div class="video-side">
+            <span class="eyebrow">Watch &amp; explore</span>
+            <h3>Biarkan lautnya<br>bercerita.</h3>
+            <p>Video ini melengkapi cerita visual website dengan suasana pantai, sunset, dan aktivitas pesisir.</p>
+            <a class="btn btn-primary video-link" target="_blank" rel="noopener noreferrer" href="https://vt.tiktok.com/ZSqgwPRgN/">Buka video ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SPOTS -->
+    <section class="spotlight">
+      <div class="wrap">
+        <div class="spotlight-inner">
+          <div class="spot-copy">
+            <span class="eyebrow">06 — Pick your moment</span>
+            <h2>What kind of<br>day is yours?</h2>
+            <p>Klik kartu untuk mengubah foto dan menemukan sisi Pantai Dermaga yang ingin kamu jelajahi.</p>
+            <div class="spot-buttons">
+              <button class="spot-btn active" data-spot="sunset">SUNSET</button>
+              <button class="spot-btn" data-spot="shore">SHORE</button>
+              <button class="spot-btn" data-spot="people">PEOPLE</button>
+            </div>
+          </div>
+          <div class="spot-photo">
+            <img id="spotImage" src="https://wsrv.nl/?url=https%3A%2F%2Fassets.promediateknologi.id%2Fcrop%2F0x0%253A0x0%2F0x0%2Fwebp%2Fphoto%2Fp2%2F86%2F2023%2F10%2F06%2Fpantai-dermaga-3195999901.jpg&w=2400&q=100&output=webp" alt="Sunset Pantai Dermaga Tuban">
+            <div class="spot-caption" id="spotCaption">Datang menjelang sore untuk melihat dermaga berubah menjadi siluet.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UMKM -->
+    <section class="umkm" id="umkm">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" style="color:#9ed9ea">07 — Kuliner / UMKM</span>
+            <h2>Rasa lokal,<br>cerita pesisir.</h2>
+          </div>
+          <p>
+            Lengkapi perjalanan dengan jajan dan produk warga sekitar. Kehadiran kuliner lokal
+            membuat pengalaman di kawasan pantai terasa lebih dekat dengan kehidupan masyarakat pesisir.
+          </p>
+        </div>
+
+        <div class="food-grid">
+          <article class="food-card large">
+            <span class="food-tag">Local bites</span>
+            <h3>Jajan setelah<br>main air.</h3>
+            <p>
+              Sisihkan waktu untuk menikmati pilihan makanan dan minuman dari penjual lokal di perjalanan.
+              Untuk informasi tenant yang benar-benar aktif di area pantai, cek pengelola setempat saat berkunjung.
+            </p>
+          </article>
+          <article class="food-card">
+            <span class="food-tag">UMKM</span>
+            <h3>Belanja<br>cerita lokal.</h3>
+            <p>
+              Dua nama di bawah ini bisa dimasukkan sebagai rujukan oleh-oleh/produk Tuban, lengkap dengan lokasi
+              supaya pengunjung tahu harus mencari di mana.
+            </p>
+          </article>
+        </div>
+
+        <div class="umkm-list">
+          <article class="umkm-item">
+            <div class="umkm-item-media">
+              <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98q-lm75zryassv81a" alt="Produk ikan jambal roti dari Toko Ana Tuban" loading="lazy" decoding="async" decoding="async">
+            </div>
+            <div class="umkm-item-copy">
+              <span class="food-tag">Pusat oleh-oleh</span>
+              <h4>Toko Ana Tuban</h4>
+              <p>Pusat oleh-oleh yang menjual produk khas Tuban, termasuk olahan ikan dan makanan kering.</p>
+              <div class="umkm-location"><strong>Lokasi</strong>Jl. RE Martadinata No. 11, Karangsari, Kecamatan Tuban, Kabupaten Tuban, Jawa Timur.</div>
+              <a class="umkm-link" href="https://www.google.com/maps/search/?api=1&query=Toko+Ana+Tuban+Jalan+RE+Martadinata+No.11" target="_blank" rel="noopener">Lihat rute ↗</a>
+              <span class="activity-credit" style="color:#9fc8d1;margin-top:10px">Foto produk: Toko Ana Tuban / Shopee</span>
+            </div>
+          </article>
+
+          <article class="umkm-item">
+            <div class="umkm-item-media">
+              <img src="https://tubankab.go.id/files/2022-12/rempeyek-bunder.jpg" alt="Rempeyek Bunder Saonone dari UMKM Bangilan" loading="lazy" decoding="async" decoding="async">
+            </div>
+            <div class="umkm-item-copy">
+              <span class="food-tag">Produk UMKM</span>
+              <h4>Rempeyek Bunder Saonone</h4>
+              <p>Produsen camilan asal Bangilan yang juga membuat keripik jambu dan beberapa produk olahan lain.</p>
+              <div class="umkm-location"><strong>Lokasi produksi</strong>Dusun Sambong Lombok, Kecamatan Bangilan, Kabupaten Tuban, Jawa Timur.</div>
+              <a class="umkm-link" href="https://www.google.com/maps/search/?api=1&query=Dusun+Sambong+Lombok+Kecamatan+Bangilan+Tuban" target="_blank" rel="noopener">Lihat area produksi ↗</a>
+              <span class="activity-credit" style="color:#9fc8d1;margin-top:10px">Foto: Situs Resmi Pemerintah Kabupaten Tuban</span>
+            </div>
+          </article>
+        </div>
+        <p class="umkm-note">Catatan: Rempeyek Bunder Saonone diproduksi di Bangilan, bukan tepat di kawasan Pantai Dermaga; Pemkab Tuban mencatat produknya juga dipasarkan melalui toko oleh-oleh khas Tuban dan pameran UMKM.</p>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location" id="lokasi">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">08 — Lokasi</span>
+            <h2>Find your way<br>to the coast.</h2>
+          </div>
+          <p>Pantai Dermaga berada di Desa Purworejo, Kecamatan Jenu, Kabupaten Tuban. Gunakan peta interaktif di samping untuk memperbesar, menggeser, dan membuka rute menuju kawasan pantai.</p>
+        </div>
+
+        <div class="location-shell">
+          <div class="location-copy">
+            <div>
+              <span class="eyebrow">Tuban · Jawa Timur</span>
+              <h2>Meet the<br>blue horizon.</h2>
+              <p>Lokasi wisata berada di pesisir Kecamatan Jenu. Karakter pantai yang luas dan landai serta bangunan dermaga di sisi barat menjadi ciri visual utamanya.</p>
+              <div class="location-address">
+                <strong>Pantai Dermaga</strong>
+                <span>Desa Purworejo, Kecamatan Jenu, Kabupaten Tuban, Jawa Timur</span>
+              </div>
+            </div>
+            <a class="btn btn-primary route-btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Pantai+Dermaga+Purworejo+Jenu+Tuban">Buka rute di Google Maps ↗</a>
+          </div>
+          <div class="map-column">
+            <div class="map-wrap">
+              <div class="map-badge">INTERACTIVE MAP · GOOGLE MAPS</div>
+              <iframe
+                class="google-map"
+                title="Lokasi Pantai Dermaga Tuban di Google Maps"
+                src="https://www.google.com/maps?q=Pantai%20Dermaga%20Purworejo%20Jenu%20Tuban&output=embed"
+                loading="lazy" decoding="async"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <section class="google-reviews" aria-label="Ulasan pengunjung Google Maps">
+              <div class="google-reviews-top">
+                <span class="google-reviews-title">Ulasan Google Maps</span>
+                <span class="google-reviews-summary">4.7 ★ · 659 ulasan</span>
+              </div>
+              <div class="google-reviews-viewport">
+                <div class="google-reviews-track" id="googleReviewsTrack">
+                  <article class="google-review-card">
+                    <div class="google-review-card-top">
+                      <span class="google-review-person">Arif Prabowo</span>
+                      <span class="google-review-stars" aria-label="Lima bintang">★★★★★</span>
+                    </div>
+                    <blockquote>“Penduduk setempat yang ramah serta pengelolaan yang baik, menambah kenyamanan bagi para pengunjung.”</blockquote>
+                    <div class="google-review-card-meta">Ulasan dilaporkan sebagai ulasan Google oleh blokTuban, 19 April 2024. Bintang pada kartu bersifat visual; rating profil tempat tercatat 4.7/5. · <a href="https://www.google.com/maps/search/?api=1&query=Pantai+Dermaga+Purworejo+Jenu+Tuban" target="_blank" rel="noopener noreferrer">Lihat di Google Maps ↗</a></div>
+                  </article>
+
+                  <article class="google-review-card">
+                    <div class="google-review-card-top">
+                      <span class="google-review-person">Mu'alifah</span>
+                      <span class="google-review-stars" aria-label="Lima bintang">★★★★★</span>
+                    </div>
+                    <blockquote>“Puas dengan fasilitas yang tersedia seperti toilet, musholla, dan penjual makanan yang ramah.”</blockquote>
+                    <div class="google-review-card-meta">Ringkasan review yang dilaporkan blokTuban dari ulasan pengunjung, 19 April 2024. Rating individu tidak dipublikasikan di sumber tersebut. · <a href="https://www.google.com/maps/search/?api=1&query=Pantai+Dermaga+Purworejo+Jenu+Tuban" target="_blank" rel="noopener noreferrer">Lihat di Google Maps ↗</a></div>
+                  </article>
+
+                  <article class="google-review-card">
+                    <div class="google-review-card-top">
+                      <span class="google-review-person">Eko Wahyudi</span>
+                      <span class="google-review-stars" aria-label="Lima bintang">★★★★★</span>
+                    </div>
+                    <blockquote>“Pantainya asri dan alami, dengan suasana yang terasa nyaman untuk menikmati pesisir.”</blockquote>
+                    <div class="google-review-card-meta">Ringkasan review yang dilaporkan blokTuban dari ulasan pengunjung, 19 April 2024. Rating individu tidak dipublikasikan di sumber tersebut. · <a href="https://www.google.com/maps/search/?api=1&query=Pantai+Dermaga+Purworejo+Jenu+Tuban" target="_blank" rel="noopener noreferrer">Lihat di Google Maps ↗</a></div>
+                  </article>
+                </div>
+              </div>
+              <div class="google-reviews-controls" aria-label="Navigasi ulasan">
+                <button class="google-review-nav" type="button" data-review-dir="prev" aria-label="Ulasan sebelumnya">‹</button>
+                <button class="google-review-nav" type="button" data-review-dir="next" aria-label="Ulasan berikutnya">›</button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO -->
+    <section class="info" id="info">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">09 — Informasi wisata</span>
+            <h2>Sebelum<br>berangkat.</h2>
+          </div>
+          <p>Informasi ringkas untuk membantu perjalanan. Detail operasional dapat berubah, jadi cek kondisi terbaru sebelum berkunjung.</p>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card info-wide">
+            <span class="eyebrow">Lokasi</span>
+            <h3>Desa Purworejo · Kecamatan Jenu · Tuban</h3>
+            <p>Pantai Dermaga berada di wilayah pesisir Kecamatan Jenu, Kabupaten Tuban, Jawa Timur, di koridor pantura.</p>
+          </article>
+
+          <article class="info-card">
+            <span class="eyebrow">Akses</span>
+            <h3>Datang dengan santai.</h3>
+            <ul>
+              <li>Dapat dijangkau kendaraan pribadi.</li>
+              <li>Akses menuju kawasan terus dikembangkan.</li>
+              <li>Perhatikan kondisi jalan dan area parkir saat berkunjung.</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <span class="eyebrow">Fasilitas</span>
+            <h3>Yang tersedia</h3>
+            <ul>
+              <li>Area parkir</li>
+              <li>Toilet / MCK</li>
+              <li>Mushola</li>
+              <li>Penjual makanan di sekitar kawasan</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <span class="eyebrow">Waktu</span>
+            <h3>Golden hour.</h3>
+            <p>
+              Pagi untuk udara pesisir yang lebih segar; sore untuk suasana senja dan siluet dermaga.
+              Hindari berjalan terlalu dekat ke area air saat kondisi laut tidak bersahabat.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="galeri">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">10 — Gallery</span>
+            <h2>Frame your<br>escape.</h2>
+          </div>
+          <p>Kumpulan visual Pantai Dermaga: laut, pasir, senja, dan karakter dermaga yang menjadi identitas destinasi.</p>
+        </div>
+
+        <div class="gallery-filters" role="tablist" aria-label="Filter galeri">
+          <button class="gallery-filter active" data-filter="all">All</button>
+          <button class="gallery-filter" data-filter="sunset">Sunset</button>
+          <button class="gallery-filter" data-filter="sea">Sea</button>
+          <button class="gallery-filter" data-filter="people">People</button>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-category="sunset" data-full="https://wsrv.nl/?url=https%3A%2F%2Fassets.promediateknologi.id%2Fcrop%2F0x0%253A0x0%2F0x0%2Fwebp%2Fphoto%2Fp2%2F86%2F2023%2F10%2F06%2Fpantai-dermaga-3195999901.jpg&w=2400&q=100&output=webp">
+            <img src="https://wsrv.nl/?url=https%3A%2F%2Fassets.promediateknologi.id%2Fcrop%2F0x0%253A0x0%2F0x0%2Fwebp%2Fphoto%2Fp2%2F86%2F2023%2F10%2F06%2Fpantai-dermaga-3195999901.jpg&w=2400&q=100&output=webp" alt="Sunset di Pantai Dermaga Tuban" loading="lazy" decoding="async">
+            <span>SUNSET</span>
+          </div>
+          <div class="gallery-item" data-category="sea" data-full="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Ffoto-di-pantai-tuban.jpg&w=2400&q=100&output=webp">
+            <img src="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Ffoto-di-pantai-tuban.jpg&w=2400&q=100&output=webp" alt="Laut dan garis pantai Pantai Dermaga Tuban" loading="lazy" decoding="async">
+            <span>THE ICON</span>
+          </div>
+          <div class="gallery-item" data-category="people" data-full="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Fpantai-dermaga.jpg&w=2400&q=100&output=webp">
+            <img src="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Fpantai-dermaga.jpg&w=2400&q=100&output=webp" alt="Pengunjung menikmati Pantai Dermaga" loading="lazy" decoding="async">
+            <span>COASTAL LIFE</span>
+          </div>
+          <div class="gallery-item" data-category="sea" data-full="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Fbersantai-tepi-pantai.jpg&w=2400&q=100&output=webp">
+            <img src="https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Fbersantai-tepi-pantai.jpg&w=2400&q=100&output=webp" alt="Pantai berpasir luas di Pantai Dermaga" loading="lazy" decoding="async">
+            <span>WHITE SAND</span>
+          </div>
+          <div class="gallery-item" data-category="sunset" data-full="https://wsrv.nl/?url=https%3A%2F%2Fassets.pikiran-rakyat.com%2Fcrop%2F0x0%253A0x0%2F1200x675%2Fwebp%2Fphoto%2F2024%2F12%2F05%2F1917709372.jpg&w=2400&q=100&output=webp">
+            <img src="https://wsrv.nl/?url=https%3A%2F%2Fassets.pikiran-rakyat.com%2Fcrop%2F0x0%253A0x0%2F1200x675%2Fwebp%2Fphoto%2F2024%2F12%2F05%2F1917709372.jpg&w=2400&q=100&output=webp" alt="Senja Pantai Dermaga Tuban" loading="lazy" decoding="async">
+            <span>LAST LIGHT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div class="footer-brand">Pantai Dermaga.</div>
+      <div class="footer-contact" id="contacts">
+        <strong>CONTACTS</strong>
+        <a href="https://wa.me/6281232716339" target="_blank" rel="noopener noreferrer">WhatsApp · 081232716339</a>
+        <a href="https://instagram.com/pantai_dermaga" target="_blank" rel="noopener noreferrer">Instagram · @pantai_dermaga</a>
+      </div>
+      <p>
+        Where White Sand Meets the Blue Sea · Desa Purworejo, Kecamatan Jenu, Kabupaten Tuban, Jawa Timur.
+        Foto pada demo ini berasal dari NativeIndonesia.com; cover awan dari Wikimedia Commons (CC0); pastikan hak penggunaan foto telah diperoleh sebelum publikasi komersial.
+      </p>
+      <a class="top" href="#home" aria-label="Kembali ke atas">↑</a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Preview foto">
+    <button class="close" id="closeLightbox" aria-label="Tutup">×</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script async src="https://www.tiktok.com/embed.js"></script>
+  <script>
+    // Mobile navigation
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // TikTok: autoplay muted when the video scrolls into view; pause when it leaves view.
+    const tiktokFrame = document.getElementById('dermaga-tiktok-player');
+    function tiktokCommand(type) {
+      if (!tiktokFrame || !tiktokFrame.contentWindow) return;
+      tiktokFrame.contentWindow.postMessage({
+        'x-tiktok-player': true,
+        type,
+        value: null
+      }, '*');
+    }
+    if (tiktokFrame && 'IntersectionObserver' in window) {
+      const tiktokObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+            tiktokCommand('mute');
+            tiktokCommand('play');
+          } else if (!entry.isIntersecting) {
+            tiktokCommand('pause');
+          }
+        });
+      }, { threshold: [0, 0.55, 1] });
+      tiktokObserver.observe(tiktokFrame);
+    }
+
+    // Visual journal — looping carousel, so the last slide never leaves an empty pane.
+    const slider = document.getElementById('momentSlider');
+    const originalCards = slider ? [...slider.querySelectorAll(':scope > .moment-card')] : [];
+    const dots = document.getElementById('momentDots');
+    const nextMoment = document.getElementById('nextMoment');
+    const prevMoment = document.getElementById('prevMoment');
+    let currentIndex = 0;
+    let isSnapping = false;
+    let track = null;
+
+    if (slider && originalCards.length) {
+      track = document.createElement('div');
+      track.className = 'moment-track';
+
+      const headClones = originalCards.slice(-2).map(card => card.cloneNode(true));
+      const tailClones = originalCards.slice(0, 2).map(card => card.cloneNode(true));
+      [...headClones, ...originalCards, ...tailClones].forEach(card => track.appendChild(card));
+      slider.innerHTML = '';
+      slider.appendChild(track);
+      currentIndex = 2;
+
+      function stepWidth(){
+        const card = track.children[0];
+        if (!card) return 0;
+        const gap = parseFloat(getComputedStyle(track).gap || '0') || 0;
+        return card.getBoundingClientRect().width + gap;
+      }
+
+      function logicalIndex(){
+        const n = originalCards.length;
+        return ((currentIndex - 2) % n + n) % n;
+      }
+
+      function updateDots(){
+        const active = logicalIndex();
+        if (dots) [...dots.children].forEach((d,i)=>d.classList.toggle('active', i===active));
+      }
+
+      function moveTo(index, animate = true){
+        if (!track) return;
+        const step = stepWidth();
+        track.style.transition = animate ? 'transform .55s cubic-bezier(.22,.61,.36,1)' : 'none';
+        track.style.transform = `translate3d(${-index * step}px,0,0)`;
+        updateDots();
+      }
+
+      function go(delta){
+        if (isSnapping) return;
+        isSnapping = true;
+        currentIndex += delta;
+        moveTo(currentIndex, true);
+      }
+
+      track.addEventListener('transitionend', () => {
+        const n = originalCards.length;
+        if (currentIndex === 1) {
+          currentIndex = n + 1;
+          moveTo(currentIndex, false);
+        } else if (currentIndex === n + 2) {
+          currentIndex = 2;
+          moveTo(currentIndex, false);
+        }
+        requestAnimationFrame(() => { isSnapping = false; updateDots(); });
+      });
+
+      if (dots) {
+        dots.innerHTML='';
+        originalCards.forEach((_, i) => {
+          const dot=document.createElement('button');
+          dot.className='slider-dot';
+          dot.setAttribute('aria-label','Buka foto '+(i+1));
+          dot.type='button';
+          dot.addEventListener('click',()=>{
+            isSnapping = false;
+            currentIndex = i + 2;
+            moveTo(currentIndex, true);
+          });
+          dots.appendChild(dot);
+        });
+      }
+
+      nextMoment?.addEventListener('click',()=>go(1));
+      prevMoment?.addEventListener('click',()=>go(-1));
+      window.addEventListener('resize',()=>moveTo(currentIndex, false));
+      moveTo(currentIndex, false);
+    }
+
+    // Interactive spot switcher
+    const spotData = {
+      sunset:{img:'https://wsrv.nl/?url=https%3A%2F%2Fassets.promediateknologi.id%2Fcrop%2F0x0%253A0x0%2F0x0%2Fwebp%2Fphoto%2Fp2%2F86%2F2023%2F10%2F06%2Fpantai-dermaga-3195999901.jpg&w=2400&q=100&output=webp',alt:'Sunset Pantai Dermaga Tuban',text:'Datang menjelang sore untuk melihat dermaga berubah menjadi siluet.'},
+      shore:{img:'https://wsrv.nl/?url=https%3A%2F%2Fassets.pikiran-rakyat.com%2Fcrop%2F0x0%253A0x0%2F1200x675%2Fwebp%2Fphoto%2F2024%2F12%2F05%2F1917709372.jpg&w=2400&q=100&output=webp',alt:'Pantai berpasir luas di Pantai Dermaga',text:'Hamparan pasir memberi ruang untuk berjalan santai dan menikmati angin laut.'},
+      people:{img:'https://wsrv.nl/?url=https%3A%2F%2Fnativeindonesia.com%2Ffoto%2F2024%2F08%2Fpantai-dermaga.jpg&w=2400&q=100&output=webp',alt:'Pengunjung bermain di Pantai Dermaga',text:'Nikmati suasana pesisir dan abadikan momen dengan dermaga sebagai latar.'}
+    };
+    document.querySelectorAll('.spot-btn').forEach(btn=>btn.addEventListener('click',()=>{
+      document.querySelectorAll('.spot-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+      const d=spotData[btn.dataset.spot], img=document.getElementById('spotImage');
+      img.style.opacity='0'; setTimeout(()=>{img.src=d.img;img.alt=d.alt;document.getElementById('spotCaption').textContent=d.text;img.style.opacity='1';},160);
+    }));
+
+
+    // Google reviews carousel — loops from last → first and first → last
+    (function(){
+      const reviewsTrack = document.getElementById('googleReviewsTrack');
+      if(!reviewsTrack) return;
+      const reviewCards = Array.from(reviewsTrack.querySelectorAll('.google-review-card'));
+      if(!reviewCards.length) return;
+      let currentReview = 0;
+
+      const goToReview = (index) => {
+        currentReview = (index + reviewCards.length) % reviewCards.length;
+        const target = reviewCards[currentReview];
+        reviewsTrack.scrollTo({
+          left: Math.max(0, target.offsetLeft - reviewsTrack.offsetLeft),
+          behavior: 'smooth'
+        });
+      };
+
+      document.querySelectorAll('[data-review-dir]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const direction = btn.dataset.reviewDir === 'next' ? 1 : -1;
+          goToReview(currentReview + direction);
+        });
+      });
+    })();
+
+    // Gallery filters
+    document.querySelectorAll('.gallery-filter').forEach(btn=>btn.addEventListener('click',()=>{
+      document.querySelectorAll('.gallery-filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+      const filter=btn.dataset.filter;
+      document.querySelectorAll('.gallery-item').forEach(item=>item.classList.toggle('hidden',filter!=='all'&&item.dataset.category!==filter));
+    }));
+
+    // Gallery lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeLightbox = document.getElementById('closeLightbox');
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        lightboxImg.src = item.dataset.full;
+        lightboxImg.alt = item.querySelector('img').alt;
+        lightbox.classList.add('open');
+      });
+    });
+
+    function closeGallery(){
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+    }
+
+    closeLightbox.addEventListener('click', closeGallery);
+    lightbox.addEventListener('click', e => {
+      if(e.target === lightbox) closeGallery();
+    });
+    document.addEventListener('keydown', e => {
+      if(e.key === 'Escape') closeGallery();
+    });
+  </script>
+</body>
+</html>
